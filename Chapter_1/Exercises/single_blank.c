@@ -7,13 +7,13 @@ int main() {
 	int last;
 	
 	while ((c = getchar()) != EOF) {
-		if (c != ' ') {
+		if (c != ' ' && c != '\t') {
 			last = 0;
 			putchar(c);
 		}
-		if (c == ' ' && !last) {
+		if ((c == ' ' || c == '\t') && !last) {
 			last = 1;
-			putchar(c);
+			putchar(' ');
 		}
 	}
 
